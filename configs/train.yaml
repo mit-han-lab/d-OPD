@@ -1,0 +1,49 @@
+model:
+  student: null
+  teacher: null
+  copy_pad_embedding_to_mask: null
+data:
+  path: null
+  epochs: null
+  apply_chat_template: null
+  enable_thinking: null
+  correctness_fn: null
+output_dir: null
+block_size: 4
+rollout:
+  prompts_per_step: null
+  max_tokens: null
+  max_prompt_tokens: null
+  max_active: null
+  gpu_memory_utilization: null
+  temperature: null
+  top_p: null
+  top_k: null
+  remasking_strategy: null
+  dynamic_threshold: null
+  response_aligned_blocks: null
+training:
+  lambda: null
+  correctness_gate: true
+  candidate_top_k: 16
+  loss_top_k: null
+  score_chunk_size: null
+  batch_size_per_gpu: null
+  gradient_accumulation_steps: null
+  learning_rate: null
+  warmup_steps: null
+  min_lr_scale: null
+  max_grad_norm: null
+  gradient_checkpointing: null
+  exclude_eos_from_loss: null
+  save_every: null
+  keep_checkpoints: null
+  cache_max_bytes: null
+  require_visible_future: null
+  preserve_zero_support: null
+wandb:
+  enabled: null
+  project: null
+  run_name: null
+  run_id: null
+seed: null

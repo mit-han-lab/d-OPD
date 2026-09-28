@@ -1,0 +1,11 @@
+block_size: 4
+top_k: 16
+correctness_gate: true
+
+correction_strength: null
+loss_top_k: null
+require_visible_future: null
+preserve_zero_support: null
+exclude_eos_from_loss: null
+score_chunk_size: null
+cache_max_bytes: null

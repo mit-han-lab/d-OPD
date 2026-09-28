@@ -1,0 +1,28 @@
+from dataclasses import dataclass
+from typing import Literal
+
+@dataclass
+class SamplingParams:
+    temperature: float = 1.0
+    max_tokens: int = 64
+    ignore_eos: bool = False
+
+    # Block Diffusion Parameters
+    block_length: int = 4
+    denoising_steps: int | None = None
+    dynamic_threshold: float = 0.9
+    eb_threshold: float = 0.35
+    topk: int = 0
+    topp: float = 1
+    remasking_strategy: Literal['sequential', 'low_confidence_static', 'low_confidence_dynamic', 'entropy_bounded'] = 'low_confidence_static'
+    stop_words: list[int] | None = None
+    seed: int | None = None
+    response_aligned_blocks: bool = True
+
+    def __post_init__(self):
+        if self.block_length < 1:
+            raise ValueError("block_length must be positive")
+        if self.denoising_steps is None:
+            self.denoising_steps = self.block_length
+        if not isinstance(self.denoising_steps, int) or self.denoising_steps < 1:
+            raise ValueError("denoising_steps must be a positive integer")
